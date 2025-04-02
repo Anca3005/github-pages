@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function downloadCV() {
+            let content = document.querySelector('.container').innerHTML;
+            let blob = new Blob([content], { type: 'text/html' });
+            let link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'CV.html';
+            link.click();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Curriculum Vitae</h1>
+        
+        <h2>Personal Information</h2>
+        <ul>
+            <li><strong>Name:</strong> <input type="text" placeholder="Your Name"></li>
+            <li><strong>Phone:</strong> <input type="text" placeholder="Your Phone Number"></li>
+            <li><strong>Email:</strong> <input type="text" placeholder="
